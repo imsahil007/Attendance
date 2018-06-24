@@ -23,28 +23,28 @@ import static android.widget.Toast.*;
 
 public class MainActivity extends AppCompatActivity {
 
-   // GridView gridView;
-   static final String[] numbers = new String[120];
-    String selectedItem;
-    TextView GridViewItems,BackSelectedItem;
-    int backposition = -1;
+    // GridView gridView;
 
+    String selectedItem;
+    TextView GridViewItems, BackSelectedItem;
+    int backposition = -1;
+    TextAdapter TA;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        for(int i=0;i<120;i++)
-        {
-            numbers[i] = String.format("%d",5000+i+1);
-        }
-
-
-        final List<String> list = new ArrayList<String>(Arrays.asList(numbers));
+        TA= new TextAdapter(this);
         final GridView gridView = (GridView) findViewById(R.id.gridview);
 
-        gridView.setAdapter(new TextAdapter(this));
+        gridView.setAdapter(TA);
 
+        for(int i=0;i<120;i++)
+        {
+            TA.numbers[i] = String.format("%d",5000+i+1);
+
+        }
+        //TA.numbers[0]="Test";
         gridView.setOnItemClickListener(new OnItemClickListener() {
 
             @Override
@@ -62,8 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
                 BackSelectedItem = (TextView) gridView.getChildAt(backposition);
 
-                if (backposition != -1)
-                {
+                if (backposition != -1) {
 
                     BackSelectedItem.setSelected(false);
 
@@ -79,64 +78,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-         class TextAdapter extends BaseAdapter
-        {
-
-            Context context;
-
-            public TextAdapter(Context context)
-            {
-                this.context = context;
-            }
-
-            @Override
-            public int getCount() {
-
-                return numbers.length;
-            }
-
-            @Override
-            public Object getItem(int position) {
-                // TODO Auto-generated method stub
-
-                return numbers[position];
-            }
-
-            @Override
-            public long getItemId(int position) {
-
-                // TODO Auto-generated method stub
-
-                return position;
-            }
-
-            @Override
-            public View getView(int position, View convertView, ViewGroup parent) {
-                // TODO Auto-generated method stub
-
-                TextView text = new TextView(this.context);
-
-                text.setText(numbers[position]);
-
-                text.setGravity(Gravity.CENTER);
-
-                text.setBackgroundColor(Color.parseColor("#fbdcbb"));
-
-                text.setTextColor(Color.parseColor("#040404"));
-
-              //  text.setLayoutParams(new GridView.LayoutParams(144, 144));
+}
 
 
-                return text;
-
-            }
-
-
-        }
-
-
-
-    }
 
 

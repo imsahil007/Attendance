@@ -69,7 +69,8 @@ public class TextAdapter extends BaseAdapter
 
         text.setTextColor(Color.parseColor("#040404"));
 
-        //  text.setLayoutParams(new GridView.LayoutParams(144, 144));
+        text.setTextSize(25);
+     //   text.setLayoutParams(new GridView.LayoutParams(144, 144));
 
 
         return text;

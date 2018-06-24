@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             TA.numbers[i] = String.format("%d",5000+i+1);
 
         }
+
         //TA.numbers[0]="Test";
         gridView.setOnItemClickListener(new OnItemClickListener() {
 

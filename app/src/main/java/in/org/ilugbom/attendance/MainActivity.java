@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         for(int i=0;i<120;i++)
         {
-            numbers[i] = String.format("%d",i+1);
+            numbers[i] = String.format("%d",5000+i+1);
         }
 
 
@@ -35,8 +35,15 @@ public class MainActivity extends AppCompatActivity {
         GridView grid = (GridView) findViewById(R.id.gridview);
         grid.setAdapter(new ArrayAdapter<String>(this, R.layout.list_item, list));
 
-       grid.onitem
+        grid.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v,
+                                    int position, long id) {
 
+                Toast.makeText(getApplicationContext(),"Hello Javatpoint",Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
     }
 

@@ -18,7 +18,8 @@ import java.util.List;
 
 public class TextAdapter extends BaseAdapter
 {
-    static final String[] numbers = new String[120];
+    String[] numbers = new String[120];
+    Integer[] status = new Integer[120];
      List<String> list = new ArrayList<String>();
 
     void TextAdapter()

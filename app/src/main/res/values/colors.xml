@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#5ca393</color>    <!-- Green Status Bar-->
+    <color name="colorPrimaryDark">#2a2b30</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="blue">#0000FF</color>
-    <color name="red">#FF0000</color>
-
+    <color name="blue">#2a2b30</color>
+    <color name="red">#2a2b30</color>
+    <color name="green">#5ca393</color>
+    <color name="black">#2a2b30</color>
+    <color name="safron">#9E4958</color>
+    <color name="yellow">#e9e42a</color>
 
 </resources>
